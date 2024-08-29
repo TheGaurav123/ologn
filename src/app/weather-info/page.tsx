@@ -78,7 +78,9 @@ export default function Page() {
 
     const loadState = async () => {
         try {
-            dispatch(setPageLoading(true));
+            if (searchQuery) {
+                dispatch(setPageLoading(true));
+            }
             handleGetWeatherInfo();
         } catch (error) {
             console.log("UI ERROR in loadstate of weather page", error);
@@ -96,7 +98,6 @@ export default function Page() {
     useEffect(() => {
         loadState();
     }, [longitude, latitude]);
-    console.log(latitude)
 
     return (
         <>

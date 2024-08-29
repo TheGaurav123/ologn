@@ -1,11 +1,24 @@
 import { ContainerIcon } from "@/assets/icons";
 import { GoogleLogo } from "@/assets/logos";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Header({ logo = true }: { logo?: boolean }) {
+    const router = useRouter();
     return (
-        <header className={`w-screen h-[20%] flex ${logo ? "justify-between" : "justify-end"} px-2 pt-2 md:px-4 md:pt-4`}>
-            {logo && <Image src={GoogleLogo} alt="google" className="w-14 md:w-32 ms-3" />}
+        <header
+            className={`w-screen h-[20%] flex ${
+                logo ? "justify-between" : "justify-end"
+            } px-2 pt-2 md:px-4 md:pt-4`}
+        >
+            {logo && (
+                <Image
+                    onClick={() => router.push("/")}
+                    src={GoogleLogo}
+                    alt="google"
+                    className="w-14 md:w-32 ms-3"
+                />
+            )}
             <ul className="flex gap-7 items-center">
                 <a href="" className="text-xs md:text-sm">
                     Gmail
