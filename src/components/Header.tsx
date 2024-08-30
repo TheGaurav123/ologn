@@ -16,7 +16,7 @@ export default function Header({ logo = true }: { logo?: boolean }) {
                     onClick={() => router.push("/")}
                     src={GoogleLogo}
                     alt="google"
-                    className="w-14 md:w-32 ms-3"
+                    className="cursor-pointer w-14 md:w-32 ms-3"
                 />
             )}
             <ul className="flex gap-7 items-center">

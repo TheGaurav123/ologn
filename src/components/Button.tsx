@@ -12,7 +12,7 @@ export default function Button({ text, className, disabled, onClick }: Props) {
         <button
             onClick={onClick}
             disabled={disabled}
-            className={`text-sm px-2.5 py-1.5 md:text-md md:px-4 shadow-sm md:py-2 rounded-md ${className}`}
+            className={`cursor-pointer text-sm px-2.5 py-1.5 md:text-md md:px-4 shadow-sm md:py-2 rounded-md ${className}`}
         >
             {text}
         </button>
